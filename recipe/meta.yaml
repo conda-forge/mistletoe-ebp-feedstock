@@ -18,9 +18,9 @@ build:
 
 requirements:
   host:
+    - attrs >=19,<=20
     - pip
     - python >=3.6
-    - setuptools
   run:
     - attrs >=19,<=20
     - python >=3.6
