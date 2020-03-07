@@ -1,20 +1,20 @@
 {% set name = "mistletoe-ebp" %}
-{% set version = "0.8.2" %}
+{% set version = "0.9.1" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: "7f5e3a06c9dcd6a4afa328b1402c65c121c8ea2a98e30b397fc6ca4deacca7f1"
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 71ab687c5355216aad36ddb6bfa9caf715b9536b7d225b4068e2085b213185e4
 
 build:
   number: 0
   entry_points:
     - mistletoe = mistletoe.__main__:main
-  noarch: "python"
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  noarch: python
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:
@@ -30,11 +30,11 @@ test:
     - mistletoe --help
 
 about:
-  home: "https://github.com/ExecutableBookProject/mistletoe-ebp"
-  license: "MIT"
-  license_family: "MIT"
-  license_file: "LICENSE"
-  summary: "A fast, extensible Markdown parser in pure Python."
+  home: https://github.com/ExecutableBookProject/mistletoe-ebp
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: A fast, extensible Markdown parser in pure Python.
 
 extra:
   recipe-maintainers:
