@@ -21,7 +21,7 @@ requirements:
     - pip
     - python >=3.6
   run:
-    - attrs ~=19.3
+    - attrs >=19,<=20
     - python >=3.6
 
 test:
