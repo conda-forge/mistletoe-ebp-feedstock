@@ -18,6 +18,7 @@ build:
 
 requirements:
   host:
+    - attrs >=19,<=20
     - pip
     - python >=3.6
   run:
