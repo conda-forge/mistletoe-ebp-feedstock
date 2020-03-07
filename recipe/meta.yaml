@@ -19,9 +19,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python >=3.6
   run:
-    - python >=3.5
+    - attrs ~=19.3
+    - python >=3.6
 
 test:
   imports:
