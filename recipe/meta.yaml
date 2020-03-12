@@ -1,5 +1,5 @@
 {% set name = "mistletoe-ebp" %}
-{% set version = "0.9.4" %}
+{% set version = "0.10.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 29aad6a6b984c44bfc2b8c6e40e2f3f821eb45c0ac90afe5715ea07f294b2ffb
+  sha256: 7ea7cb4f5ae7c12c3306be3bc917b093563c358b7291a1c787ab4c5e65b55766
 
 build:
   number: 0
   entry_points:
-    - mistletoe = mistletoe.__main__:main
+    - mistletoe = mistletoe.cli.parse:main
+    - mistletoe-bench = mistletoe.cli.benchmark:main
   noarch: python
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
