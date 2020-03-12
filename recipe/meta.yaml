@@ -12,7 +12,8 @@ source:
 build:
   number: 0
   entry_points:
-    - mistletoe = mistletoe.__main__:main
+    - mistletoe = mistletoe.cli.parse:main
+    - mistletoe-bench = mistletoe.cli.benchmark:main
   noarch: python
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
