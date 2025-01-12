@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 7ea7cb4f5ae7c12c3306be3bc917b093563c358b7291a1c787ab4c5e65b55766
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - mistletoe = mistletoe.cli.parse:main
     - mistletoe-bench = mistletoe.cli.benchmark:main
@@ -21,12 +21,14 @@ requirements:
   host:
     - attrs >=19,<=20
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - attrs >=19,<=20
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - mistletoe
   commands:
